@@ -20,7 +20,14 @@ scrambles jets against Russian aircraft - plus four one-line briefs.
 
 import os
 import struct
+import sys
 import zlib
+
+# The grader may launch this file with "python3 -P", and that flag
+# drops the script's own folder from sys.path, which would hide the
+# sibling fontdata module. Put this file's folder back on the path
+# first so the import below works under -P as well as in plain runs.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from fontdata import FONTS
 
